@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, Jainu 😍</title>
+    <title>Happy Birthday, Jaini!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS for animations and Pikachu theme */
+        /* Custom CSS for animations and Pink theme */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FFFBEB; /* Light yellow background */
+            background-color: #FFF5F7; /* Light pink background */
             overflow-x: hidden;
         }
         .font-dancing {
@@ -21,14 +21,14 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: #FFDE00; /* Yellow */
-            opacity: 0.8;
+            background-color: #FFD700; /* Gold */
+            opacity: 0.7;
             border-radius: 50%;
             animation: fall 5s linear infinite;
         }
-        .confetti.red { background-color: #F44336; }
-        .confetti.blue { background-color: #2196F3; }
-        .confetti.black { background-color: #333; width: 12px; height: 5px; border-radius: 5px;}
+        .confetti.pink { background-color: #FF69B4; }
+        .confetti.blue { background-color: #87CEEB; }
+        .confetti.green { background-color: #98FB98; }
 
         @keyframes fall {
             0% { transform: translateY(-10vh) rotate(0deg); }
@@ -47,9 +47,10 @@
         }
 
         .main-header {
-            background: linear-gradient(45deg, #FFDE00, #F44336);
+            background: linear-gradient(45deg, #FF6B6B, #FFC0CB);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            word-break: break-word;
         }
 
         @keyframes fadeIn {
@@ -68,50 +69,36 @@
         .gallery-img:hover {
             transform: scale(1.05);
         }
-        
-        /* Style for locked buttons */
-        .locked-btn {
-            cursor: not-allowed;
-            background-color: #d1d5db; /* gray-300 */
-            opacity: 0.7;
-        }
     </style>
 </head>
 <body class="text-gray-800">
-    <!-- Pika-pi! (\\__/) (o^.^) (")_(") -->
+    <!-- Made with love for Jaini -->
 
     <!-- Confetti Container -->
     <div id="confetti-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></div>
 
     <!-- Modals Container -->
     <div id="specialModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 transition-opacity duration-300">
-        <div class="modal-content bg-white p-8 rounded-2xl shadow-2xl text-center relative max-w-md mx-auto">
+        <div class="modal-content bg-white p-8 rounded-2xl shadow-2xl text-center relative max-w-md mx-auto" onclick="event.stopPropagation()">
             <button data-close-modal class="absolute top-2 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold">&times;</button>
-            <div class="text-6xl mb-4">⚡️</div>
-            <h3 class="text-4xl font-dancing text-yellow-500 mb-4">A Special Note For You!</h3>
+            <div class="text-6xl mb-4">💖</div>
+            <h3 class="text-4xl font-dancing text-pink-500 mb-4">A Special Note For You!</h3>
             <p class="text-lg text-gray-600">Jaini, on your birthday, I just wanted to remind you how incredibly special you are. Your laughter brightens every room and your kindness touches every heart. May your day be as wonderful as the joy you bring to everyone. Happy Birthday!</p>
         </div>
     </div>
     
     <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
-         <button data-close-modal class="absolute top-4 right-6 text-white text-5xl font-bold">&times;</button>
-         <img id="lightboxImage" src="" alt="Enlarged memory" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl">
+         <div class="relative">
+            <button data-close-modal class="absolute -top-2 -right-2 md:top-4 md:right-6 text-white bg-black bg-opacity-50 rounded-full p-1 text-4xl leading-none">&times;</button>
+            <img id="lightboxImage" src="" alt="Enlarged memory" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl">
+         </div>
     </div>
 
-    <div id="lockedModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 transition-opacity duration-300">
-        <div class="modal-content bg-white p-8 rounded-2xl shadow-2xl text-center relative max-w-md mx-auto">
-            <button data-close-modal class="absolute top-2 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold">&times;</button>
-            <div class="text-6xl mb-4">🔒</div>
-            <h3 class="text-4xl font-dancing text-yellow-500 mb-4">It's a Secret!</h3>
-            <p class="text-lg text-gray-600">This surprise is locked away until Jaini's birthday begins. Come back on October 4th to unlock the magic!</p>
-        </div>
-    </div>
-    
     <div id="giftModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 transition-opacity duration-300">
-        <div class="modal-content bg-white p-8 rounded-2xl shadow-2xl text-center relative max-w-md mx-auto">
+        <div class="modal-content bg-white p-8 rounded-2xl shadow-2xl text-center relative max-w-md mx-auto" onclick="event.stopPropagation()">
             <button data-close-modal class="absolute top-2 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold">&times;</button>
-            <h3 class="text-4xl font-dancing text-yellow-500 mb-4">A Gift For You!</h3>
-            <img src="https://placehold.co/300x300/FFDE00/333333?text=Pikachu!&font=lato" alt="A wild Pikachu gift appears!" class="mx-auto rounded-lg mb-4 border-4 border-gray-800">
+            <h3 class="text-4xl font-dancing text-pink-500 mb-4">A Gift For You!</h3>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="A wild Pikachu gift appears!" class="mx-auto rounded-lg mb-4 h-64 w-64 object-contain">
             <p class="text-lg text-gray-600">I choose you, Jaini, to have the best birthday ever! Hope you like this little Pikachu gift. May your year be filled with electric moments and joyful adventures!</p>
         </div>
     </div>
@@ -120,47 +107,25 @@
 
         <!-- Header Section -->
         <header class="text-center my-12">
-            <h1 class="text-6xl md:text-8xl font-black font-dancing main-header">Happy Birthday, Jaini!</h1>
-            <p class="text-xl md:text-2xl text-gray-500 mt-4">Wishing you a shocking-ly awesome day!</p>
+            <h2 class="text-5xl sm:text-6xl lg:text-8xl font-black font-dancing main-header">Happy Birthday, Jaini💕</h2>
+            <p class="text-xl md:text-2xl text-gray-500 mt-4">Wishing you the most amazing day ever!</p>
         </header>
 
         <!-- Main Content -->
         <main>
-            <!-- Countdown & Message Section -->
+            <!-- Message Section -->
             <section class="card p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 mb-12">
-                <img src="https://placehold.co/400x400/FFDE00/000000?text=Jaini!" alt="Pikachu themed birthday placeholder" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-8 border-white shadow-lg">
+                <img src="https://placehold.co/400x400/FFC0CB/FFFFFF?text=Jainu<3" alt="Jaini's Birthday Picture" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-8 border-white shadow-lg flex-shrink-0">
                 <div class="text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-yellow-500 mb-4">A Wild Birthday Appears!</h2>
+                    <h2 class="text-3xl font-bold text-pink-500 mb-4">The Big Day is Here! 🎉</h2>
                     <p class="text-lg mb-6">A day as bright, beautiful, and wonderful as you are. May your birthday be filled with laughter, joy, and everything you've wished for. Cheers to another fantastic year ahead!</p>
-                    <!-- Countdown Timer -->
-                    <div id="countdown" class="flex justify-center md:justify-start space-x-4 text-center mb-6">
-                        <!-- Timer content here -->
-                        <div>
-                            <div id="days" class="text-4xl font-bold bg-yellow-200 text-yellow-800 rounded-lg p-3">00</div>
-                            <div class="text-sm text-gray-500 mt-1">Days</div>
-                        </div>
-                        <div>
-                            <div id="hours" class="text-4xl font-bold bg-yellow-200 text-yellow-800 rounded-lg p-3">00</div>
-                            <div class="text-sm text-gray-500 mt-1">Hours</div>
-                        </div>
-                        <div>
-                            <div id="minutes" class="text-4xl font-bold bg-yellow-200 text-yellow-800 rounded-lg p-3">00</div>
-                            <div class="text-sm text-gray-500 mt-1">Minutes</div>
-                        </div>
-                        <div>
-                            <div id="seconds" class="text-4xl font-bold bg-yellow-200 text-yellow-800 rounded-lg p-3">00</div>
-                            <div class="text-sm text-gray-500 mt-1">Seconds</div>
-                        </div>
-                    </div>
                     <!-- Surprise Buttons -->
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                         <button id="surpriseBtn" class="transition-all duration-300 font-bold py-3 px-6 rounded-full shadow-lg text-white">
+                         <button id="surpriseBtn" class="bg-pink-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-pink-600 transition-all transform hover:scale-105">
                             A Special Note 💌
                         </button>
-                        <button id="songBtn" class="transition-all duration-300 font-bold py-3 px-6 rounded-full shadow-lg text-white">
-                            Play A Song 🎶
-                        </button>
-                         <button id="giftBtn" class="hidden transition-all duration-300 font-bold py-3 px-6 rounded-full shadow-lg text-white bg-blue-500 hover:bg-blue-600 transform hover:scale-105">
+                      
+                         <button id="giftBtn" class="bg-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-all transform hover:scale-105">
                             Open Your Gift! 🎁
                         </button>
                     </div>
@@ -169,7 +134,7 @@
 
             <!-- Photo Gallery Section -->
             <section class="mb-12">
-                <h2 class="text-4xl font-bold text-center mb-8 font-dancing text-yellow-500">A Walk Down Memory Lane</h2>
+                <h2 class="text-4xl font-bold text-center mb-8 font-dancing text-pink-500">A Walk Down Memory Lane</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="card p-2"><img src="jenu 1.jpg" alt="Memory 1" class="gallery-img rounded-lg w-full h-auto"></div>
                     <div class="card p-2 mt-0 md:mt-8"><img src="jenu 2.jpg" alt="Memory 2" class="gallery-img rounded-lg w-full h-auto"></div>
@@ -180,28 +145,28 @@
 
             <!-- Wishes Section -->
             <section>
-                 <h2 class="text-4xl font-bold text-center mb-8 font-dancing text-yellow-500">Messages from the Heart</h2>
+                 <h2 class="text-4xl font-bold text-center mb-8 font-dancing text-pink-500">Messages from the Heart</h2>
                 <div class="space-y-6">
                     <div class="card p-6">
                         <p class="text-lg italic">"Happy birthday, Jaini! Your friendship is a treasure. Hope you have a day that's as amazing as you are!"</p>
-                        <p class="text-right font-bold text-yellow-600 mt-2">- Your Bestie</p>
+                        <p class="text-right font-bold text-pink-400 mt-2">- Your Bestie</p>
                     </div>
                     <div class="card p-6">
                         <p class="text-lg italic">"Wishing you all the happiness in the world on your special day. Keep shining bright! Happy Birthday!"</p>
-                        <p class="text-right font-bold text-yellow-600 mt-2">- From the Family</p>
+                        <p class="text-right font-bold text-pink-400 mt-2">- From the Family</p>
                     </div>
                      <div class="card p-6">
                         <p class="text-lg italic">"Cheers to more adventures, more laughs, and more memories in the coming year. Happy Birthday, Jaini!"</p>
-                        <p class="text-right font-bold text-yellow-600 mt-2">- Your Partner in Crime</p>
+                        <p class="text-right font-bold text-pink-400 mt-2">- Your Partner in Crime</p>
                     </div>
                 </div>
             </section>
         </main>
 
         <!-- Footer -->
-        <footer class="text-center mt-16 py-8 border-t border-yellow-300">
+        <footer class="text-center mt-16 py-8 border-t border-pink-200">
             <p class="text-gray-500">Made with ❤️ for the one and only Jaini.</p>
-            <p class="text-sm text-gray-400 mt-4">(P.S. There are secret surprises hidden... try shaking your phone or typing a special code on her birthday!)</p>
+            <p class="text-sm text-gray-400 mt-4">(P.S. There are secret surprises hidden... try shaking your phone or typing a special code!)</p>
         </footer>
 
     </div>
@@ -209,126 +174,57 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- STATE MANAGEMENT ---
-            let isBirthday = false;
-
             // --- ELEMENT REFERENCES ---
             const specialModal = document.getElementById('specialModal');
             const imageModal = document.getElementById('imageModal');
-            const lockedModal = document.getElementById('lockedModal');
             const giftModal = document.getElementById('giftModal');
-            const modals = [specialModal, imageModal, lockedModal, giftModal];
             
             const surpriseBtn = document.getElementById('surpriseBtn');
             const songBtn = document.getElementById('songBtn');
             const giftBtn = document.getElementById('giftBtn');
+            const lightboxImage = document.getElementById('lightboxImage');
+            
+            // --- MODAL HANDLING ---
+            const openModal = (modal) => modal.classList.remove('hidden');
+            const closeModal = (modal) => modal.classList.add('hidden');
 
+            // Attach listeners to open buttons
+            surpriseBtn.addEventListener('click', () => openModal(specialModal));
+            giftBtn.addEventListener('click', () => openModal(giftModal));
+
+            // Attach listeners to close buttons and backdrops for all modals
+            document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+                const closeButton = modal.querySelector('[data-close-modal]');
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => closeModal(modal));
+                }
+                modal.addEventListener('click', () => closeModal(modal));
+            });
+            
             // --- Confetti Animation ---
             const confettiContainer = document.getElementById('confetti-container');
             for (let i = 0; i < 100; i++) {
                 const confetti = document.createElement('div');
-                const colors = ['red', 'blue', 'black', ''];
+                const colors = ['pink', 'blue', 'green', ''];
                 confetti.classList.add('confetti', colors[Math.floor(Math.random() * colors.length)]);
                 confetti.style.left = Math.random() * 100 + 'vw';
                 confetti.style.animationDuration = Math.random() * 3 + 4 + 's';
                 confetti.style.animationDelay = Math.random() * 5 + 's';
                 confettiContainer.appendChild(confetti);
             }
-
-            // --- Countdown Timer ---
-            let currentYear = new Date().getFullYear();
-            let birthday = new Date(`October 04, ${currentYear} 00:00:00`);
-            
-            if (new Date() > birthday) {
-                birthday = new Date(`October 04, ${currentYear + 1} 00:00:00`);
-            }
-
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-
-            function updateUIForBirthday() {
-                isBirthday = true;
-                document.getElementById('countdown').innerHTML = `<div class="text-4xl text-center w-full font-bold text-yellow-600">Happy Birthday, Jaini! 🎉</div>`;
-                
-                surpriseBtn.classList.remove('locked-btn');
-                surpriseBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600', 'transform', 'hover:scale-105');
-                
-                songBtn.classList.remove('locked-btn');
-                songBtn.classList.add('bg-red-500', 'hover:bg-red-600', 'transform', 'hover:scale-105');
-                
-                giftBtn.classList.remove('hidden');
-            }
-            
-            function setLockedState() {
-                surpriseBtn.classList.add('locked-btn');
-                songBtn.classList.add('locked-btn');
-            }
-
-            function countdown() {
-                const totalSeconds = (birthday - new Date()) / 1000;
-
-                if (totalSeconds <= 0) {
-                    clearInterval(countdownInterval);
-                    updateUIForBirthday();
-                    return;
-                }
-
-                daysEl.textContent = formatTime(Math.floor(totalSeconds / 3600 / 24));
-                hoursEl.textContent = formatTime(Math.floor(totalSeconds / 3600) % 24);
-                minutesEl.textContent = formatTime(Math.floor(totalSeconds / 60) % 60);
-                secondsEl.textContent = formatTime(Math.floor(totalSeconds) % 60);
-            }
-
-            function formatTime(time) { return time < 10 ? `0${time}` : time; }
-            
-            // Initial check to set locked/unlocked state
-            if ((birthday - new Date()) / 1000 > 0) {
-                setLockedState();
-            } else {
-                updateUIForBirthday();
-            }
-
-            const countdownInterval = setInterval(countdown, 1000);
-            countdown();
-
-            // --- Unified Modal Logic ---
-            modals.forEach(modal => {
-                if (!modal) return;
-                const closeButton = modal.querySelector('[data-close-modal]');
-                const closeModal = () => modal.classList.add('hidden');
-                if (closeButton) closeButton.addEventListener('click', closeModal);
-                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-            });
             
             // --- Image Lightbox ---
-            const lightboxImage = document.getElementById('lightboxImage');
             document.querySelectorAll('.gallery-img').forEach(img => {
-                img.addEventListener('click', () => {
+                img.addEventListener('click', (event) => {
+                    event.stopPropagation();
                     lightboxImage.src = img.src;
-                    imageModal.classList.remove('hidden');
+                    openModal(imageModal);
                 });
             });
 
-            // --- Surprise Button Clicks ---
-            surpriseBtn.addEventListener('click', () => {
-                if (isBirthday) specialModal.classList.remove('hidden');
-                else lockedModal.classList.remove('hidden');
-            });
-
-            giftBtn.addEventListener('click', () => {
-                if (isBirthday) {
-                    giftModal.classList.remove('hidden');
-                }
-            });
-
+            // --- Birthday Song ---
             let songPlayed = false;
             songBtn.addEventListener('click', async () => {
-                if (!isBirthday) {
-                    lockedModal.classList.remove('hidden');
-                    return;
-                }
                 if (songPlayed) return;
                 songPlayed = true;
                 try {
@@ -351,13 +247,12 @@
                 }
             });
 
-            // --- Secret Surprises (Birthday Only) ---
+            // --- Secret Surprises ---
             if (window.DeviceMotionEvent) {
                 let shakeThreshold = 15;
                 let last_x, last_y, last_z;
                 let lastUpdate = 0;
                 window.addEventListener('devicemotion', (event) => {
-                    if (!isBirthday) return;
                     let { x, y, z } = event.accelerationIncludingGravity;
                     let currentTime = new Date().getTime();
                     if ((currentTime - lastUpdate) > 100) {
@@ -365,7 +260,7 @@
                         lastUpdate = currentTime;
                         let speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
                         if (speed > shakeThreshold) {
-                            specialModal.classList.remove('hidden');
+                            openModal(specialModal);
                         }
                         last_x = x; last_y = y; last_z = z;
                     }
@@ -375,11 +270,10 @@
             const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
             let konamiIndex = 0;
             document.addEventListener('keydown', (e) => {
-                if (!isBirthday) return;
                 if (e.key === konamiCode[konamiIndex]) {
                     konamiIndex++;
                     if (konamiIndex === konamiCode.length) {
-                        specialModal.classList.remove('hidden');
+                        openModal(specialModal);
                         konamiIndex = 0;
                     }
                 } else {
@@ -390,5 +284,4 @@
     </script>
 </body>
 </html>
-
 
