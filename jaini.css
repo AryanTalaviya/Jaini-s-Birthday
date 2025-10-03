@@ -1,0 +1,7 @@
+/* Modal tweaks for responsiveness */
+.modal-content {
+  width: 90%;
+  max-width: 28rem; /* keep it readable */
+  max-height: 90vh;
+  overflow-y: auto;
+}
